@@ -1,4 +1,32 @@
 GIT
+  remote: git://github.com/200Creative/spree_bootstrap_frontend.git
+  revision: 1c6b9114753f2635a9c4142e71299d1b95081af0
+  branch: 2-1-stable
+  specs:
+    spree_bootstrap_frontend (2.1)
+      bootstrap-sass (~> 3.1.0)
+      kaminari-bootstrap (~> 3.0.1)
+      spree_core (~> 2.1.0)
+
+GIT
+  remote: git://github.com/radar/better_spree_paypal_express.git
+  revision: 900dd702561678fdb636389f7cf4431ccb058b86
+  branch: 2-1-stable
+  specs:
+    spree_paypal_express (2.0.3)
+      paypal-sdk-merchant (= 1.106.1)
+      spree_core (~> 2.1.1)
+
+GIT
+  remote: git://github.com/romul/spree_address_book.git
+  revision: 8551503c185c7b222c43570da2176a01bdc9212a
+  branch: 2-1-stable
+  specs:
+    spree_address_book (2.0.0)
+      spree_auth_devise
+      spree_core (~> 2.1)
+
+GIT
   remote: git://github.com/spree/spree.git
   revision: d91aa576f65a776af2839baca3f071128f0ed33c
   branch: 2-1-stable
@@ -64,6 +92,45 @@ GIT
       spree_core (~> 2.1.0)
       spree_frontend (~> 2.1.0)
 
+GIT
+  remote: git://github.com/spree/spree_print_invoice.git
+  revision: fa84354805b67ad9a3a7537e78d18df766408d90
+  branch: 2-1-stable
+  specs:
+    spree_print_invoice (2.0.0)
+      prawn (= 1.0.0)
+      spree_core (~> 2.1.0)
+
+GIT
+  remote: git://github.com/spree/spree_reviews.git
+  revision: 2dc10d01a9aae10e33e5634aadaeceeda579be26
+  branch: 2-1-stable
+  specs:
+    spree_reviews (1.0.0)
+      spree_core (~> 2.1.0)
+
+GIT
+  remote: git://github.com/spree/spree_social.git
+  revision: 9fb7a3c7747d8363314e10bf916d46cc4a89e262
+  branch: 2-1-stable
+  specs:
+    spree_social (2.3.0)
+      oa-core
+      omniauth
+      omniauth-facebook
+      omniauth-github
+      omniauth-google-oauth2
+      omniauth-twitter
+      spree_core (~> 2.1.0)
+
+GIT
+  remote: git://github.com/spree/spree_social_products.git
+  revision: 61028fc07e6bce8bc27b985bebabbb8646837a00
+  branch: 2-1-stable
+  specs:
+    spree_social_products (2.0)
+      spree_core (~> 2.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -112,10 +179,16 @@ GEM
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bcrypt (3.1.7)
+    bootstrap-sass (3.1.1.1)
+      sass (~> 3.2)
     builder (3.1.4)
     cancan (1.6.10)
     canonical-rails (0.0.7)
       rails (>= 3.1, < 5.0)
+    capistrano (3.2.1)
+      i18n
+      rake (>= 10.0.0)
+      sshkit (~> 1.3)
     choice (0.1.6)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -129,6 +202,13 @@ GEM
       execjs
     coffee-script-source (1.7.0)
     colorize (0.7.2)
+    columnize (0.8.9)
+    debugger (1.6.6)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.3.2)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.3.4)
     deface (1.0.0)
       colorize (>= 0.5.8)
       nokogiri (~> 1.6.0)
@@ -143,7 +223,11 @@ GEM
       devise (>= 2.1.0)
     erubis (2.7.0)
     execjs (2.0.2)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
     ffaker (1.24.0)
+    gmaps4rails (2.1.2)
+    hashie (2.1.1)
     highline (1.6.21)
     hike (1.2.3)
     httparty (0.13.1)
@@ -159,9 +243,15 @@ GEM
     jquery-ui-rails (4.1.2)
       railties (>= 3.1.0)
     json (1.8.1)
+    jwt (0.1.13)
+      multi_json (>= 1.5)
     kaminari (0.15.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kaminari-bootstrap (3.0.1)
+      kaminari (>= 0.13.0)
+      rails
+    kgio (2.9.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -174,8 +264,42 @@ GEM
       i18n (~> 0.6.4)
     multi_json (1.9.2)
     multi_xml (0.5.5)
+    multipart-post (2.0.0)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.9.0)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
+    oa-core (0.3.2)
+    oauth (0.4.7)
+    oauth2 (0.9.3)
+      faraday (>= 0.8, < 0.10)
+      jwt (~> 0.1.8)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (~> 1.2)
+    omniauth (1.2.1)
+      hashie (>= 1.2, < 3)
+      rack (~> 1.0)
+    omniauth-facebook (1.6.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-github (1.1.2)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-google-oauth2 (0.2.4)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-oauth2 (1.1.2)
+      faraday (>= 0.8, < 0.10)
+      multi_json (~> 1.3)
+      oauth2 (~> 0.9.3)
+      omniauth (~> 1.2)
+    omniauth-twitter (1.0.1)
+      multi_json (~> 1.3)
+      omniauth-oauth (~> 1.0)
     orm_adapter (0.5.0)
     paperclip (3.4.2)
       activemodel (>= 3.0.0)
@@ -185,9 +309,18 @@ GEM
       mime-types
     paranoia (2.0.2)
       activerecord (~> 4.0)
+    paypal-sdk-core (0.2.8)
+      multi_json (~> 1.0)
+      xml-simple
+    paypal-sdk-merchant (1.106.1)
+      paypal-sdk-core (~> 0.2.3)
+    pdf-core (0.2.5)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.4)
+    prawn (1.0.0)
+      pdf-core (~> 0.2.2)
+      ttfunk (~> 1.1.1)
     rabl (0.9.3)
       activesupport (>= 2.3.14)
     rack (1.5.2)
@@ -206,11 +339,17 @@ GEM
       activesupport (>= 3.0)
       choice (~> 0.1.6)
       ruby-graphviz (~> 1.0.4)
+    rails_12factor (0.0.2)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.2)
+    rails_stdout_logging (0.0.3)
     railties (4.0.4)
       actionpack (= 4.0.4)
       activesupport (= 4.0.4)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
+    raindrops (0.13.0)
     rake (10.3.1)
     ransack (1.1.0)
       actionpack (>= 3.0)
@@ -231,6 +370,8 @@ GEM
     select2-rails (3.4.9)
       sass-rails
       thor (~> 0.14)
+    spree_showcase (0.7)
+      spree_core (>= 2)
     sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -241,21 +382,33 @@ GEM
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     sqlite3 (1.3.9)
+    sshkit (1.4.0)
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
+      term-ansicolor
     state_machine (1.2.0)
     stringex (1.5.1)
+    term-ansicolor (1.3.0)
+      tins (~> 1.0)
     thor (0.19.1)
     thread_safe (0.3.3)
     tilt (1.4.1)
+    tins (1.1.0)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
     truncate_html (0.9.2)
+    ttfunk (1.1.1)
     turbolinks (2.2.2)
       coffee-rails
     tzinfo (0.3.39)
     uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicorn (4.8.3)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
     uuidtools (2.1.4)
     versioncake (1.2.0)
       actionpack (>= 3.2)
@@ -264,6 +417,7 @@ GEM
       tzinfo
     warden (1.2.3)
       rack (>= 1.0)
+    xml-simple (1.1.3)
     xray-rails (0.1.14)
       coffee-rails
       rails (>= 3.1.0)
@@ -272,16 +426,29 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  capistrano
   coffee-rails (~> 4.0.0)
+  debugger
+  gmaps4rails (~> 2.1.2)
   jbuilder (~> 1.2)
   jquery-rails
   rails (= 4.0.4)
   rails-erd
+  rails_12factor
   sass-rails (~> 4.0.2)
   sdoc
   spree!
+  spree_address_book!
   spree_auth_devise!
+  spree_bootstrap_frontend!
+  spree_paypal_express!
+  spree_print_invoice!
+  spree_reviews!
+  spree_showcase
+  spree_social!
+  spree_social_products!
   sqlite3
   turbolinks
   uglifier (>= 1.3.0)
+  unicorn
   xray-rails
